@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 class MasterViewModel {
     
     private var contentRepository: ContentRepository

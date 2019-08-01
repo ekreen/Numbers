@@ -44,4 +44,36 @@ class HttpManagerImpl: HttpManager {
         task.resume()
         
     }
+    
+    func retrieveNumberDetail(with name: String, completion: @escaping NumberDetailCompletion) {
+        guard var component = URLComponents(string: tappticUrl) else {
+            completion(nil, HttpManagerError.badUrl)
+            return
+        }
+        
+        component.queryItems = [URLQueryItem(name: "name", value: name)]
+        
+        let task = URLSession.shared.dataTask(with: component.url!) { (data, response, error) in
+            guard error == nil else {
+                completion(nil, error)
+                return
+            }
+            
+            
+            guard let data = data else {
+                completion(nil, HttpManagerError.noData)
+                return
+            }
+            
+            let decoder = JSONDecoder.init()
+            guard let result = try? decoder.decode(NumberDetail.self, from: data) else {
+                completion(nil, HttpManagerError.noData)
+                return
+            }
+            
+            completion(result, nil)
+        }
+        
+        task.resume()
+    }
 }

@@ -29,6 +29,8 @@
 		80832DE422F341E6005A9BD6 /* NumberDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80832DE322F341E6005A9BD6 /* NumberDetail.swift */; };
 		80832DE722F346BC005A9BD6 /* MasterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80832DE622F346BC005A9BD6 /* MasterViewModel.swift */; };
 		80832DEA22F34771005A9BD6 /* HttpManagerValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80832DE922F34771005A9BD6 /* HttpManagerValues.swift */; };
+		A2445A5122F37B9A00096A6D /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2445A5022F37B9A00096A6D /* DetailViewModel.swift */; };
+		A2445A5322F3822E00096A6D /* MasterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2445A5222F3822E00096A6D /* MasterTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,8 @@
 		80832DE322F341E6005A9BD6 /* NumberDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberDetail.swift; sourceTree = "<group>"; };
 		80832DE622F346BC005A9BD6 /* MasterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewModel.swift; sourceTree = "<group>"; };
 		80832DE922F34771005A9BD6 /* HttpManagerValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpManagerValues.swift; sourceTree = "<group>"; };
+		A2445A5022F37B9A00096A6D /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		A2445A5222F3822E00096A6D /* MasterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +188,7 @@
 			children = (
 				80832DB922F30F20005A9BD6 /* MasterViewController.swift */,
 				80832DE622F346BC005A9BD6 /* MasterViewModel.swift */,
+				A2445A5222F3822E00096A6D /* MasterTableViewCell.swift */,
 			);
 			path = master;
 			sourceTree = "<group>";
@@ -192,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				80832DBB22F30F46005A9BD6 /* DetailViewController.swift */,
+				A2445A5022F37B9A00096A6D /* DetailViewModel.swift */,
 			);
 			path = detail;
 			sourceTree = "<group>";
@@ -380,6 +386,7 @@
 				80832DDB22F33B86005A9BD6 /* HttpManager.swift in Sources */,
 				80832DBC22F30F46005A9BD6 /* DetailViewController.swift in Sources */,
 				80832DE222F3418C005A9BD6 /* Number.swift in Sources */,
+				A2445A5122F37B9A00096A6D /* DetailViewModel.swift in Sources */,
 				80832D9622F2F627005A9BD6 /* AppDelegate.swift in Sources */,
 				80832DC522F31D42005A9BD6 /* Router.swift in Sources */,
 				80832DD722F33B28005A9BD6 /* ContentRepository.swift in Sources */,
@@ -387,6 +394,7 @@
 				80832DC922F32327005A9BD6 /* ControllerFactory.swift in Sources */,
 				80832DDD22F33BA6005A9BD6 /* HttpManagerImpl.swift in Sources */,
 				80832DEA22F34771005A9BD6 /* HttpManagerValues.swift in Sources */,
+				A2445A5322F3822E00096A6D /* MasterTableViewCell.swift in Sources */,
 				80832DCF22F3242C005A9BD6 /* UIValues.swift in Sources */,
 				80832DB622F2F7AB005A9BD6 /* MainViewController.swift in Sources */,
 				80832DE022F33ECA005A9BD6 /* HttpManagerError.swift in Sources */,

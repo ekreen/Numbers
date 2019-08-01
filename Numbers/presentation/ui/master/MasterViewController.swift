@@ -13,12 +13,38 @@ class MasterViewController: UITableViewController {
     // MARK: - Properties
     var wireframe: RootWireframe!
     var viewModel: MasterViewModel!
-    var mockData = ["toto", "tata", "titi", "plop"]
     var numberList: [Number] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        tableView(tableView, didSelectRowAt: IndexPath(row: 0, section: 0))
+        loadData()
+    }
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return numberList.count
+    }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: IdentifierCellValues.NUMBER, for: indexPath) as! MasterTableViewCell
+
+        cell.populate(with: numberList[indexPath.row])
+
+        return cell
+    }
+ 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        wireframe.showDetail(value: numberList[indexPath.row].name)
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100.0
+    }
+}
+
+
+private extension MasterViewController {
+    func loadData() {
         viewModel.retrieveNumberList { (result, error) in
             guard error == nil else {
                 print(error!)
@@ -36,24 +62,8 @@ class MasterViewController: UITableViewController {
                 }
                 strongSelf.numberList = result
                 strongSelf.tableView.reloadData()
+                strongSelf.tableView(strongSelf.tableView, didSelectRowAt: IndexPath(row: 0, section: 0))
             }
         }
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-    {
-        return numberList.count
-    }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: IdentifierCellValues.NUMBER, for: indexPath)
-
-        cell.textLabel?.text = numberList[indexPath.row].name//mockData[indexPath.row]
-
-        return cell
-    }
- 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        wireframe.showDetail(value: numberList[indexPath.row].name)
     }
 }

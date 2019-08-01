@@ -30,7 +30,7 @@ class RootWireframe {
     }
     
     func showDetail(value: String) {
-        let controller = controllerFactory.makeDetailViewController(mockData: value)
+        let controller = controllerFactory.makeDetailViewController(contentRepository: contentRepository, name: value)
         self.router.showDetail(controller: controller)
     }
 }

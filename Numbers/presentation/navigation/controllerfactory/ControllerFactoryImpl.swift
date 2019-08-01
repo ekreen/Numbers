@@ -20,9 +20,9 @@ class ControllerFactoryImpl: ControllerFactory {
         return controller
     }
     
-    func makeDetailViewController(mockData: String) -> DetailViewController {
+    func makeDetailViewController(contentRepository: ContentRepository, name: String) -> DetailViewController {
         let controller = UIStoryboard.init(name: StoryboardValues.MAIN, bundle: nil).instantiateViewController(withIdentifier: IdentifierViewControllerValues.DETAIL) as! DetailViewController
-        controller.dataMock = mockData
+        controller.viewModel = DetailViewModel(contentRepository: contentRepository, name: name)
         return controller
     }
     

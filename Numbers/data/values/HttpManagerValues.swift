@@ -9,3 +9,4 @@
 import Foundation
 
 typealias NumbersCompletion = ([Number]?, Error?) -> Void
+typealias NumberDetailCompletion = (NumberDetail?, Error?) -> Void

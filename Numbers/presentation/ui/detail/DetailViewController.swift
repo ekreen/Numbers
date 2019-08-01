@@ -9,18 +9,13 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    
+    // MARK: - Outlets
     @IBOutlet weak var mockLabel: UILabel!
     
+    // MARK: - Properties
     var dataMock: String?
-    
-    init(dataMock: String) {
-        self.dataMock = dataMock
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
+    var viewModel: DetailViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +24,32 @@ class DetailViewController: UIViewController {
             splitViewController?.displayModeButtonItem
         navigationItem.leftItemsSupplementBackButton = true
         
-        mockLabel.text = dataMock
+        loadData()
+    }
+}
+
+
+private extension DetailViewController {
+    func loadData() {
+        viewModel.retrieveNumberDetail { (result, error) in
+            guard error == nil else {
+                print(error!)
+                return
+            }
+            
+            guard let result = result else {
+                return
+            }
+            
+            DispatchQueue.main.async { [weak self] in
+                
+                guard let strongSelf = self else {
+                    return
+                }
+                
+                strongSelf.mockLabel.text = result.name
+                strongSelf.title = result.name
+            }
+        }
     }
 }

@@ -20,4 +20,8 @@ class ContentRepository {
         httpManager.retrieveAllNumbers(completion: completion)
     }
     
+    func retrieveNumberDetail(with name: String, completion: @escaping NumberDetailCompletion) {
+        httpManager.retrieveNumberDetail(with: name, completion: completion)
+    }
+    
 }
