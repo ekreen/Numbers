@@ -13,12 +13,16 @@ class ControllerFactoryImpl: ControllerFactory {
         return UIStoryboard.init(name: StoryboardValues.MAIN, bundle: nil).instantiateViewController(withIdentifier: IdentifierViewControllerValues.MAIN) as! MainViewController
     }
     
-    func makeMasterViewController() -> MasterViewController {
-        return UIStoryboard.init(name: StoryboardValues.MAIN, bundle: nil).instantiateViewController(withIdentifier: IdentifierViewControllerValues.MASTER) as! MasterViewController
+    func makeMasterViewController(wireframe: RootWireframe) -> MasterViewController {
+        let controller = UIStoryboard.init(name: StoryboardValues.MAIN, bundle: nil).instantiateViewController(withIdentifier: IdentifierViewControllerValues.MASTER) as! MasterViewController
+        controller.wireframe = wireframe
+        return controller
     }
     
-    func makeDetailViewController() -> DetailViewController {
-        return UIStoryboard.init(name: StoryboardValues.MAIN, bundle: nil).instantiateViewController(withIdentifier: IdentifierViewControllerValues.DETAIL) as! DetailViewController
+    func makeDetailViewController(mockData: String) -> DetailViewController {
+        let controller = UIStoryboard.init(name: StoryboardValues.MAIN, bundle: nil).instantiateViewController(withIdentifier: IdentifierViewControllerValues.DETAIL) as! DetailViewController
+        controller.dataMock = mockData
+        return controller
     }
     
     

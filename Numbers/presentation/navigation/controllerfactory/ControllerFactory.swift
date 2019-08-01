@@ -10,6 +10,6 @@ import UIKit
 
 protocol ControllerFactory {
     func makeMainViewController() -> UISplitViewController
-    func makeMasterViewController() -> MasterViewController
-    func makeDetailViewController() -> DetailViewController
+    func makeMasterViewController(wireframe: RootWireframe) -> MasterViewController
+    func makeDetailViewController(mockData: String) -> DetailViewController
 }

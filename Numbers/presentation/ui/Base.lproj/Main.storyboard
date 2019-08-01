@@ -80,9 +80,6 @@
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <connections>
-                        <segue destination="DRp-GQ-3vC" kind="relationship" relationship="rootViewController" id="Rtu-hK-EWW"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CK3-9I-atm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -91,12 +88,7 @@
         <!--Main View Controller-->
         <scene sceneID="qaE-wJ-GcQ">
             <objects>
-                <splitViewController storyboardIdentifier="MainViewController" id="RWy-nj-qS3" customClass="MainViewController" customModule="Numbers" customModuleProvider="target" sceneMemberID="viewController">
-                    <connections>
-                        <segue destination="NOf-dM-F6d" kind="relationship" relationship="masterViewController" id="9TU-8l-yY5"/>
-                        <segue destination="mf6-GH-scR" kind="relationship" relationship="detailViewController" id="xAQ-MW-nvX"/>
-                    </connections>
-                </splitViewController>
+                <splitViewController storyboardIdentifier="MainViewController" id="RWy-nj-qS3" customClass="MainViewController" customModule="Numbers" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x8x-0L-Xem" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1002" y="-376"/>

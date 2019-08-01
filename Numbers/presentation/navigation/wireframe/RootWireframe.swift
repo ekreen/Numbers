@@ -9,7 +9,6 @@
 import UIKit
 
 class RootWireframe {
-    private var splitViewController: UISplitViewController
     private var window: UIWindow
     private var router: Router
     private var controllerFactory: ControllerFactory
@@ -17,21 +16,19 @@ class RootWireframe {
     init(window: UIWindow, controllerFactory: ControllerFactory) {
         self.window = window
         self.controllerFactory = controllerFactory
-        self.splitViewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
         self.router = RouterImpl(rootController: controllerFactory.makeMainViewController())
-        let master = controllerFactory.makeMasterViewController()
-        master.router = self
-        
-        let detailViewController = controllerFactory.makeDetailViewController()
+
+    }
+    
+    func start() {
+        let master = controllerFactory.makeMasterViewController(wireframe: self)
+        master.wireframe = self
         router.setMasterController(controller: master)
-        router.showDetail(controller: detailViewController)
         window.rootViewController = router.rootController
     }
     
-    
     func showDetail(value: String) {
-        let controller = controllerFactory.makeDetailViewController()
-        controller.dataMock = value
+        let controller = controllerFactory.makeDetailViewController(mockData: value)
         self.router.showDetail(controller: controller)
     }
 }

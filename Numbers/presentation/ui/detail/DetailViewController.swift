@@ -13,6 +13,15 @@ class DetailViewController: UIViewController {
     
     var dataMock: String?
     
+    init(dataMock: String) {
+        self.dataMock = dataMock
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

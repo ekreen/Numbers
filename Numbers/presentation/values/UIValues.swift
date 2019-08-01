@@ -17,3 +17,7 @@ enum IdentifierViewControllerValues {
     static let MAIN = "MainViewController"
     static let DETAIL = "DetailViewController"
 }
+
+enum IdentifierCellValues {
+    static let NUMBER = "numberCell"
+}

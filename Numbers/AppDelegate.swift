@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         let controllerFactory = ControllerFactoryImpl()
         let wireframe = RootWireframe(window: window!, controllerFactory: controllerFactory)
+        wireframe.start()
         window?.makeKeyAndVisible()
         return true
     }
