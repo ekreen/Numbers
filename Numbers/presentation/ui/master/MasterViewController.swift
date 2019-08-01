@@ -16,7 +16,7 @@ class MasterViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView(tableView, didSelectRowAt: IndexPath(row: 0, section: 0))
+//        tableView(tableView, didSelectRowAt: IndexPath(row: 0, section: 0))
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int

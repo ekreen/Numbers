@@ -10,7 +10,9 @@ import UIKit
 
 class ControllerFactoryImpl: ControllerFactory {
     func makeMainViewController() -> UISplitViewController {
-        return UIStoryboard.init(name: StoryboardValues.MAIN, bundle: nil).instantiateViewController(withIdentifier: IdentifierViewControllerValues.MAIN) as! MainViewController
+//
+//        return UIStoryboard.init(name: StoryboardValues.MAIN, bundle: nil).instantiateViewController(withIdentifier: IdentifierViewControllerValues.MAIN) as! MainViewController
+        return MainViewController(nibName: nil, bundle: nil)
     }
     
     func makeMasterViewController(wireframe: RootWireframe) -> MasterViewController {
