@@ -6,7 +6,7 @@
 //  Copyright © 2019 Kespri. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 enum StoryboardValues {
     static let MAIN = "Main"
@@ -20,4 +20,8 @@ enum IdentifierViewControllerValues {
 
 enum IdentifierCellValues {
     static let NUMBER = "numberCell"
+}
+
+enum TableViewValues {
+    static let HEIGHT_CELL: CGFloat = 100.0
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class MasterTableViewCell: UITableViewCell {
 
@@ -18,16 +19,28 @@ class MasterTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.selectionStyle = .none
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+        if selected {
+            self.backgroundColor = .red
+            nameLabel.textColor = .white
+        } else {
+            self.backgroundColor = .white
+            nameLabel.textColor = .black
+        }
     }
     
-    func populate(with numberDetail: Number) {
-        nameLabel.text = numberDetail.name
+    func populate(with number: Number) {
+        nameLabel.text = number.name
+        guard let url = URL(string: number.image) else {
+            return
+        }
+        numberImage.sd_setImage(with: url, completed: nil)
     }
 
 }
