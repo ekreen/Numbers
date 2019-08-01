@@ -21,6 +21,12 @@
 		80832DC922F32327005A9BD6 /* ControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80832DC822F32327005A9BD6 /* ControllerFactory.swift */; };
 		80832DCC22F3239D005A9BD6 /* ControllerFactoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80832DCB22F3239D005A9BD6 /* ControllerFactoryImpl.swift */; };
 		80832DCF22F3242C005A9BD6 /* UIValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80832DCE22F3242C005A9BD6 /* UIValues.swift */; };
+		80832DD722F33B28005A9BD6 /* ContentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80832DD622F33B28005A9BD6 /* ContentRepository.swift */; };
+		80832DDB22F33B86005A9BD6 /* HttpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80832DDA22F33B86005A9BD6 /* HttpManager.swift */; };
+		80832DDD22F33BA6005A9BD6 /* HttpManagerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80832DDC22F33BA6005A9BD6 /* HttpManagerImpl.swift */; };
+		80832DE022F33ECA005A9BD6 /* HttpManagerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80832DDF22F33ECA005A9BD6 /* HttpManagerError.swift */; };
+		80832DE222F3418C005A9BD6 /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80832DE122F3418C005A9BD6 /* Number.swift */; };
+		80832DE422F341E6005A9BD6 /* NumberDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80832DE322F341E6005A9BD6 /* NumberDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +58,12 @@
 		80832DC822F32327005A9BD6 /* ControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerFactory.swift; sourceTree = "<group>"; };
 		80832DCB22F3239D005A9BD6 /* ControllerFactoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerFactoryImpl.swift; sourceTree = "<group>"; };
 		80832DCE22F3242C005A9BD6 /* UIValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIValues.swift; sourceTree = "<group>"; };
+		80832DD622F33B28005A9BD6 /* ContentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentRepository.swift; sourceTree = "<group>"; };
+		80832DDA22F33B86005A9BD6 /* HttpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpManager.swift; sourceTree = "<group>"; };
+		80832DDC22F33BA6005A9BD6 /* HttpManagerImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpManagerImpl.swift; sourceTree = "<group>"; };
+		80832DDF22F33ECA005A9BD6 /* HttpManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpManagerError.swift; sourceTree = "<group>"; };
+		80832DE122F3418C005A9BD6 /* Number.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Number.swift; sourceTree = "<group>"; };
+		80832DE322F341E6005A9BD6 /* NumberDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +137,11 @@
 		80832DBE22F3112C005A9BD6 /* data */ = {
 			isa = PBXGroup;
 			children = (
+				80832DE522F341ED005A9BD6 /* model */,
+				80832DDE22F33EB7005A9BD6 /* error */,
+				80832DD922F33B54005A9BD6 /* manager */,
+				80832DD822F33B48005A9BD6 /* repository */,
+				80832DD622F33B28005A9BD6 /* ContentRepository.swift */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -206,6 +223,39 @@
 				80832DC622F31DA9005A9BD6 /* RouterImpl.swift */,
 			);
 			path = router;
+			sourceTree = "<group>";
+		};
+		80832DD822F33B48005A9BD6 /* repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = repository;
+			sourceTree = "<group>";
+		};
+		80832DD922F33B54005A9BD6 /* manager */ = {
+			isa = PBXGroup;
+			children = (
+				80832DDA22F33B86005A9BD6 /* HttpManager.swift */,
+				80832DDC22F33BA6005A9BD6 /* HttpManagerImpl.swift */,
+			);
+			path = manager;
+			sourceTree = "<group>";
+		};
+		80832DDE22F33EB7005A9BD6 /* error */ = {
+			isa = PBXGroup;
+			children = (
+				80832DDF22F33ECA005A9BD6 /* HttpManagerError.swift */,
+			);
+			path = error;
+			sourceTree = "<group>";
+		};
+		80832DE522F341ED005A9BD6 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				80832DE122F3418C005A9BD6 /* Number.swift */,
+				80832DE322F341E6005A9BD6 /* NumberDetail.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,12 +362,18 @@
 				80832DBA22F30F20005A9BD6 /* MasterViewController.swift in Sources */,
 				80832DC722F31DA9005A9BD6 /* RouterImpl.swift in Sources */,
 				80832DB822F30CF9005A9BD6 /* RootWireframe.swift in Sources */,
+				80832DDB22F33B86005A9BD6 /* HttpManager.swift in Sources */,
 				80832DBC22F30F46005A9BD6 /* DetailViewController.swift in Sources */,
+				80832DE222F3418C005A9BD6 /* Number.swift in Sources */,
 				80832D9622F2F627005A9BD6 /* AppDelegate.swift in Sources */,
 				80832DC522F31D42005A9BD6 /* Router.swift in Sources */,
+				80832DD722F33B28005A9BD6 /* ContentRepository.swift in Sources */,
+				80832DE422F341E6005A9BD6 /* NumberDetail.swift in Sources */,
 				80832DC922F32327005A9BD6 /* ControllerFactory.swift in Sources */,
+				80832DDD22F33BA6005A9BD6 /* HttpManagerImpl.swift in Sources */,
 				80832DCF22F3242C005A9BD6 /* UIValues.swift in Sources */,
 				80832DB622F2F7AB005A9BD6 /* MainViewController.swift in Sources */,
+				80832DE022F33ECA005A9BD6 /* HttpManagerError.swift in Sources */,
 				80832DCC22F3239D005A9BD6 /* ControllerFactoryImpl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

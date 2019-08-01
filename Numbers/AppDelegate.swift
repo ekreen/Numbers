@@ -17,6 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        let manager = HttpManagerImpl()
+        manager.retrieveAllNumbers { (result, error) in
+            if (error != nil) {
+                print(error)
+            } else {
+                print(result)
+            }
+        }
+        
         window = UIWindow(frame: UIScreen.main.bounds)
         let controllerFactory = ControllerFactoryImpl()
         let wireframe = RootWireframe(window: window!, controllerFactory: controllerFactory)
