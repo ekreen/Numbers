@@ -12,25 +12,26 @@ class RootWireframe {
     private var window: UIWindow
     private var router: Router
     private var controllerFactory: ControllerFactory
-    private var contentRepository: ContentRepository
+    private var appDependencies: AppDependencies
     
-    init(window: UIWindow, controllerFactory: ControllerFactory, contentRepository: ContentRepository) {
+    init(window: UIWindow, appDependencies: AppDependencies) {
         self.window = window
-        self.controllerFactory = controllerFactory
+        self.controllerFactory = appDependencies.controllerFactory
         self.router = RouterImpl(rootController: controllerFactory.makeMainViewController())
-        self.contentRepository = contentRepository
+        self.appDependencies = appDependencies
+//        self.contentRepository = contentRepository
 
     }
     
     func start() {
-        let master = controllerFactory.makeMasterViewController(wireframe: self, contentRepository: contentRepository)
+        let master = controllerFactory.makeMasterViewController(wireframe: self, contentRepository: appDependencies.contentRepository)
         master.wireframe = self
         router.setMasterController(controller: master)
         window.rootViewController = router.rootController
     }
     
     func showDetail(value: String) {
-        let controller = controllerFactory.makeDetailViewController(contentRepository: contentRepository, name: value)
+        let controller = controllerFactory.makeDetailViewController(contentRepository: appDependencies.contentRepository, name: value)
         self.router.showDetail(controller: controller)
     }
 }

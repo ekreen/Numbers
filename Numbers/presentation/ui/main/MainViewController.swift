@@ -8,11 +8,9 @@
 
 import UIKit
 
-class MainViewController: UISplitViewController {
-
+class MainViewController: UISplitViewController, UISplitViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        delegate = self
     }
 }

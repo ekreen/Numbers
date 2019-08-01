@@ -10,7 +10,8 @@ import UIKit
 
 class ControllerFactoryImpl: ControllerFactory {
     func makeMainViewController() -> UISplitViewController {
-        return MainViewController(nibName: nil, bundle: nil)
+        let controller = MainViewController(nibName: nil, bundle: nil)
+        return controller
     }
     
     func makeMasterViewController(wireframe: RootWireframe, contentRepository: ContentRepository) -> MasterViewController {

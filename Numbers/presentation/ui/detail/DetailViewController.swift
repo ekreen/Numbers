@@ -11,7 +11,8 @@ import UIKit
 class DetailViewController: UIViewController {
     
     // MARK: - Outlets
-    @IBOutlet weak var mockLabel: UILabel!
+    @IBOutlet weak var numberImage: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
     
     // MARK: - Properties
     var dataMock: String?
@@ -19,17 +20,21 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        prepareVC()
+    }
+}
 
+// MARK: - Private functions
+private extension DetailViewController {
+    
+    func prepareVC() {
         navigationItem.leftBarButtonItem =
             splitViewController?.displayModeButtonItem
         navigationItem.leftItemsSupplementBackButton = true
         
         loadData()
     }
-}
-
-
-private extension DetailViewController {
+    
     func loadData() {
         viewModel.retrieveNumberDetail { (result, error) in
             guard error == nil else {
@@ -47,8 +52,13 @@ private extension DetailViewController {
                     return
                 }
                 
-                strongSelf.mockLabel.text = result.name
-                strongSelf.title = result.name
+                strongSelf.nameLabel.text = result.name
+                strongSelf.title = "Number \(result.name)"
+                
+                guard let url = URL(string: result.image) else {
+                    return
+                }
+                strongSelf.numberImage.sd_setImage(with: url, completed: nil)
             }
         }
     }

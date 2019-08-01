@@ -15,13 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        
+        let appDependencies = AppDependencies()
         window = UIWindow(frame: UIScreen.main.bounds)
-        let controllerFactory = ControllerFactoryImpl()
-        let httpManager = HttpManagerImpl()
-        let contentRepository = ContentRepository(httpManager: httpManager)
-        let wireframe = RootWireframe(window: window!, controllerFactory: controllerFactory, contentRepository: contentRepository)
+        let wireframe = RootWireframe(window: window!, appDependencies: appDependencies)
         wireframe.start()
         window?.makeKeyAndVisible()
         return true

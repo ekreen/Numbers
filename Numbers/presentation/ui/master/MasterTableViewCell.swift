@@ -11,27 +11,29 @@ import SDWebImage
 
 class MasterTableViewCell: UITableViewCell {
 
+    // MARK: - Outlets
     @IBOutlet weak var numberImage: UIImageView!
-    
     @IBOutlet weak var nameLabel: UILabel!
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         self.selectionStyle = .none
+        numberImage.sd_imageIndicator = SDWebImageActivityIndicator.gray
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
         if selected {
-            self.backgroundColor = .red
-            nameLabel.textColor = .white
+            changeColor(backgroundColor: .red, textColor: .white)
         } else {
-            self.backgroundColor = .white
-            nameLabel.textColor = .black
+            changeColor()
+        }
+    }
+    
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        if highlighted {
+            changeColor(backgroundColor: .blue, textColor: .white)
         }
     }
     
@@ -43,4 +45,11 @@ class MasterTableViewCell: UITableViewCell {
         numberImage.sd_setImage(with: url, completed: nil)
     }
 
+}
+
+private extension MasterTableViewCell {
+    func changeColor(backgroundColor: UIColor = .white, textColor: UIColor = .black) {
+        self.backgroundColor = backgroundColor
+        nameLabel.textColor = textColor
+    }
 }

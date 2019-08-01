@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class MasterViewController: UITableViewController {
     
@@ -17,9 +18,11 @@ class MasterViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Numbers List"
         loadData()
     }
 
+    // MARK: - Delegate & datasource
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return numberList.count
@@ -27,9 +30,7 @@ class MasterViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: IdentifierCellValues.NUMBER, for: indexPath) as! MasterTableViewCell
-
         cell.populate(with: numberList[indexPath.row])
-
         return cell
     }
  
@@ -42,7 +43,7 @@ class MasterViewController: UITableViewController {
     }
 }
 
-
+// MARK: - Private functions
 private extension MasterViewController {
     func loadData() {
         viewModel.retrieveNumberList { (result, error) in
@@ -62,8 +63,19 @@ private extension MasterViewController {
                 }
                 strongSelf.numberList = result
                 strongSelf.tableView.reloadData()
-                strongSelf.tableView(strongSelf.tableView, didSelectRowAt: IndexPath(row: 0, section: 0))
+                strongSelf.performDefaultSelectionRow()
             }
         }
+    }
+    
+    func performDefaultSelectionRow() {
+        guard numberList.count > 0 else {
+            return
+        }
+        
+        let firstIndex = IndexPath(row: 0, section: 0)
+        
+        tableView.selectRow(at: firstIndex, animated: false, scrollPosition: .none)
+        tableView(tableView, didSelectRowAt: firstIndex)
     }
 }

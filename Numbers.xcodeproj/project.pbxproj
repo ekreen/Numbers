@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -33,6 +33,7 @@
 		8C705A7996B4076555DF0E12 /* Pods_Numbers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2520672CBD003BB4AA96D2A /* Pods_Numbers.framework */; };
 		A2445A5122F37B9A00096A6D /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2445A5022F37B9A00096A6D /* DetailViewModel.swift */; };
 		A2445A5322F3822E00096A6D /* MasterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2445A5222F3822E00096A6D /* MasterTableViewCell.swift */; };
+		A2445A5622F3A55600096A6D /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2445A5522F3A55600096A6D /* AppDependencies.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		9E1E221C7B57BABEDB728614 /* Pods_NumbersTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NumbersTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2445A5022F37B9A00096A6D /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		A2445A5222F3822E00096A6D /* MasterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterTableViewCell.swift; sourceTree = "<group>"; };
+		A2445A5522F3A55600096A6D /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
 		B2520672CBD003BB4AA96D2A /* Pods_Numbers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Numbers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9A1B4D36828A85E891A2C9B /* Pods-Numbers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Numbers.release.xcconfig"; path = "Target Support Files/Pods-Numbers/Pods-Numbers.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,7 +121,6 @@
 				823F4B330EB6E41A7E207C02 /* Pods-NumbersTests.debug.xcconfig */,
 				1D9CA087CECB47C654B31DD9 /* Pods-NumbersTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -146,6 +147,7 @@
 		80832D9422F2F627005A9BD6 /* Numbers */ = {
 			isa = PBXGroup;
 			children = (
+				A2445A5422F3A52A00096A6D /* di */,
 				80832DBE22F3112C005A9BD6 /* data */,
 				80832DBD22F31123005A9BD6 /* presentation */,
 				80832D9522F2F627005A9BD6 /* AppDelegate.swift */,
@@ -309,6 +311,14 @@
 				80832DE922F34771005A9BD6 /* HttpManagerValues.swift */,
 			);
 			path = values;
+			sourceTree = "<group>";
+		};
+		A2445A5422F3A52A00096A6D /* di */ = {
+			isa = PBXGroup;
+			children = (
+				A2445A5522F3A55600096A6D /* AppDependencies.swift */,
+			);
+			path = di;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -488,6 +498,7 @@
 				80832DE222F3418C005A9BD6 /* Number.swift in Sources */,
 				A2445A5122F37B9A00096A6D /* DetailViewModel.swift in Sources */,
 				80832D9622F2F627005A9BD6 /* AppDelegate.swift in Sources */,
+				A2445A5622F3A55600096A6D /* AppDependencies.swift in Sources */,
 				80832DC522F31D42005A9BD6 /* Router.swift in Sources */,
 				80832DD722F33B28005A9BD6 /* ContentRepository.swift in Sources */,
 				80832DE422F341E6005A9BD6 /* NumberDetail.swift in Sources */,
