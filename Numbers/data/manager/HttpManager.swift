@@ -9,5 +9,5 @@
 import Foundation
 
 protocol HttpManager {
-    
+    func retrieveAllNumbers(completion: @escaping NumbersCompletion)
 }

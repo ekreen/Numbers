@@ -1,5 +1,5 @@
 //
-//  ContentRepository.swift
+//  HttpManagerValues.swift
 //  Numbers
 //
 //  Created by Kevin ESPRIT on 01/08/2019.
@@ -8,10 +8,4 @@
 
 import Foundation
 
-class ContentRepository {
-    
-    init() {
-        
-    }
-    
-}
+typealias NumbersCompletion = ([Number]?, Error?) -> Void

@@ -12,8 +12,6 @@ class HttpManagerImpl: HttpManager {
     
     private let tappticUrl = "http://dev.tapptic.com/test/json.php"
     
-    typealias NumbersCompletion = ([Number]?, Error?) -> Void
-    
     func retrieveAllNumbers(completion: @escaping NumbersCompletion) {
         
         guard let url = URL(string: tappticUrl) else {

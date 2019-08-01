@@ -12,16 +12,18 @@ class RootWireframe {
     private var window: UIWindow
     private var router: Router
     private var controllerFactory: ControllerFactory
+    private var contentRepository: ContentRepository
     
-    init(window: UIWindow, controllerFactory: ControllerFactory) {
+    init(window: UIWindow, controllerFactory: ControllerFactory, contentRepository: ContentRepository) {
         self.window = window
         self.controllerFactory = controllerFactory
         self.router = RouterImpl(rootController: controllerFactory.makeMainViewController())
+        self.contentRepository = contentRepository
 
     }
     
     func start() {
-        let master = controllerFactory.makeMasterViewController(wireframe: self)
+        let master = controllerFactory.makeMasterViewController(wireframe: self, contentRepository: contentRepository)
         master.wireframe = self
         router.setMasterController(controller: master)
         window.rootViewController = router.rootController
